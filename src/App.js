@@ -1,7 +1,17 @@
+import React, {useState, useEffect} from "react";
 import logo from './logo.svg';
 import './App.css';
+import {getUsageData} from "./actions";
 
 function App() {
+
+  useEffect(() => {
+    getUsageData()
+        .then(data => {
+          console.log(data)
+        })
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
